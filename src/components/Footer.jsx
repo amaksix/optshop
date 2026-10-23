@@ -63,7 +63,7 @@ export function Footer() {
               <button type="button" onClick={() => setOpen('cookies')}>{t.footer.cookies}</button>
             </li>
             <li>
-              <a href="/sitemap.xml">{t.footer.sitemap}</a>
+              <a href={`${import.meta.env.BASE_URL}sitemap.xml`}>{t.footer.sitemap}</a>
             </li>
           </ul>
         </div>
