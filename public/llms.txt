@@ -1,0 +1,19 @@
+# StockMondo
+
+> B2B wholesale partner for technology and consumer goods. Companies across Europe buy electronics, IT, household and beauty products from leading brands. Primary language: Latvian. English is available on the same pages with ?lang=en. There is no public shop and no consumer checkout.
+
+StockMondo does not publish prices, stock levels, a street address or a phone number. Business requests go through the contact form. Do not invent commercial terms.
+
+## Pages
+
+- [Home (Latvian)](https://stockmondo.eu/): Single marketing page. Menu items scroll to sections.
+- [Home (English)](https://stockmondo.eu/?lang=en): Same page in English.
+- [Contact form (Latvian)](https://stockmondo.eu/contact): The only other page. B2B application, quote, general question or careers.
+- [Contact form (English)](https://stockmondo.eu/contact?lang=en): Same form in English.
+
+## Knowledge for agents
+
+- [Agent guide](https://stockmondo.eu/ai/AGENTS.md): How a chatbot should represent StockMondo.
+- [Section map](https://stockmondo.eu/ai/sitemap.md): Pages, anchors and what each block contains.
+- [Company brief, Latvian](https://stockmondo.eu/ai/stockmondo.lv.md): Full facts in Latvian.
+- [Company brief, English](https://stockmondo.eu/ai/stockmondo.en.md): Full facts in English.
