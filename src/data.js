@@ -15,19 +15,12 @@ export const categories = [
   { id: 'accessories', icon: 'Cable', photo: 'category-accessories' },
 ];
 
-export const heroPoints = [
+export const values = [
   { id: 'brands', icon: 'Package' },
   { id: 'delivery', icon: 'Truck' },
   { id: 'terms', icon: 'BadgePercent' },
   { id: 'b2b', icon: 'Handshake' },
   { id: 'support', icon: 'Headset' },
-];
-
-export const values = [
-  { id: 'range', icon: 'Boxes' },
-  { id: 'fast', icon: 'Truck' },
-  { id: 'flexible', icon: 'ShieldCheck' },
-  { id: 'custom', icon: 'Settings2' },
   { id: 'europe', icon: 'Globe' },
 ];
 

@@ -34,18 +34,12 @@ export const translations = {
       ctaPartner: 'Kļūt par klientu',
       ctaQuote: 'Pieprasīt piedāvājumu',
     },
-    heroPoints: {
+    values: {
       brands: 'Plašs zīmolu klāsts',
       delivery: 'Piegādes visā Eiropā',
       terms: 'Konkurētspējīgi nosacījumi',
       b2b: 'Individuāli B2B risinājumi',
       support: 'Profesionāls atbalsts',
-    },
-    values: {
-      range: 'Plašs sortiments no vadošajiem zīmoliem',
-      fast: 'Ātras un uzticamas piegādes',
-      flexible: 'Elastīgi sadarbības nosacījumi',
-      custom: 'Individuāli risinājumi B2B klientiem',
       europe: 'Sadarbība ar uzņēmumiem visā Eiropā',
     },
     categories: {
@@ -301,18 +295,12 @@ export const translations = {
       ctaPartner: 'Become a client',
       ctaQuote: 'Request a quote',
     },
-    heroPoints: {
+    values: {
       brands: 'Wide brand portfolio',
       delivery: 'Delivery across Europe',
       terms: 'Competitive terms',
       b2b: 'Individual B2B solutions',
       support: 'Professional support',
-    },
-    values: {
-      range: 'Broad assortment from leading brands',
-      fast: 'Fast and reliable delivery',
-      flexible: 'Flexible cooperation terms',
-      custom: 'Individual solutions for B2B clients',
       europe: 'Cooperation with companies across Europe',
     },
     categories: {

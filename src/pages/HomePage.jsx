@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { BrandLogo } from '../components/BrandLogo';
@@ -11,7 +11,6 @@ import {
   allBrands,
   categories,
   clients,
-  heroPoints,
   homeBrands,
   newsItems,
   partnerPoints,
@@ -27,16 +26,29 @@ export function HomePage() {
   const [showAllCategories, setShowAllCategories] = useState(false);
   const [showAllBrands, setShowAllBrands] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+  const categoryPin = useRef(null);
 
-  useEffect(() => {
-    const id = location.hash.replace('#', '');
-    const index = categories.findIndex((category) => `cat-${category.id}` === id);
-    if (index >= 4) setShowAllCategories(true);
-  }, [location.hash]);
+  const toggleCategories = () => {
+    const section = document.getElementById('categories');
+    categoryPin.current = section ? section.getBoundingClientRect().top : null;
+    setShowAllCategories((open) => !open);
+  };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (categoryPin.current == null) return;
+    const section = document.getElementById('categories');
+    const next = section ? section.getBoundingClientRect().top : categoryPin.current;
+    const delta = next - categoryPin.current;
+    categoryPin.current = null;
+    if (Math.abs(delta) > 1) window.scrollBy({ top: delta, behavior: 'auto' });
+  }, [showAllCategories]);
+
+  useLayoutEffect(() => {
     const id = location.hash.replace('#', '');
     const behavior = prefersReducedMotion() ? 'auto' : 'smooth';
+    const index = categories.findIndex((category) => `cat-${category.id}` === id);
+    if (index >= 4) setShowAllCategories(true);
+
     const frame = requestAnimationFrame(() => {
       if (!id) {
         window.scrollTo({ top: 0, behavior });
@@ -45,7 +57,7 @@ export function HomePage() {
       document.getElementById(id)?.scrollIntoView({ behavior, block: 'start' });
     });
     return () => cancelAnimationFrame(frame);
-  }, [location.pathname, location.hash, showAllCategories]);
+  }, [location.pathname, location.hash]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -84,16 +96,6 @@ export function HomePage() {
             <PhotoSlot id="hero-map" label={t.photos.hero} className="photo-slot--dark" />
             <div className="hero__shade" />
           </div>
-          <ul className="hero__points">
-            {heroPoints.map((point) => (
-              <li key={point.id}>
-                <span className="point-icon">
-                  <Icon name={point.icon} size={18} />
-                </span>
-                {t.heroPoints[point.id]}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -115,7 +117,7 @@ export function HomePage() {
               <span>{t.categories.title}</span>
               <i className="rule" aria-hidden="true" />
             </h2>
-            <button type="button" className="text-link" onClick={() => setShowAllCategories((open) => !open)}>
+            <button type="button" className="text-link" onClick={toggleCategories}>
               {showAllCategories ? t.categories.showLess : t.categories.seeAll} <ArrowRight size={16} />
             </button>
           </div>
