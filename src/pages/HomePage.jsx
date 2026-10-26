@@ -8,9 +8,12 @@ import { Seo } from '../components/Seo';
 import { site } from '../config';
 import { useI18n } from '../context/Language';
 import {
+  aboutPoints,
   allBrands,
   categories,
   clients,
+  deliveryImage,
+  heroBanner,
   homeBrands,
   newsItems,
   partnerPoints,
@@ -79,6 +82,8 @@ export function HomePage() {
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
 
       <section className="hero" id="home">
+        <img className="hero__banner" src={heroBanner} alt={t.photos.hero} />
+        <div className="hero__scrim" aria-hidden="true" />
         <div className="wrap hero__grid">
           <div className="hero__copy">
             <p className="eyebrow">{t.hero.eyebrow}</p>
@@ -91,10 +96,6 @@ export function HomePage() {
                 {t.hero.ctaPartner} <ArrowRight size={18} />
               </a>
             </div>
-          </div>
-          <div className="hero__media">
-            <PhotoSlot id="hero-map" label={t.photos.hero} className="photo-slot--dark" />
-            <div className="hero__shade" />
           </div>
         </div>
       </section>
@@ -124,7 +125,7 @@ export function HomePage() {
           <div className="category-grid">
             {visibleCategories.map((category) => (
               <article key={category.id} id={`cat-${category.id}`} className="category-card">
-                <PhotoSlot id={category.photo} label={t.photos.category} />
+                <PhotoSlot src={category.image} alt={t.photos[category.id]} />
                 <h3>{t.categories[category.id].title}</h3>
                 <p>{t.categories[category.id].text}</p>
               </article>
@@ -178,17 +179,16 @@ export function HomePage() {
       </section>
 
       <section className="logistics" id="partner">
+        <img className="logistics__bg" src={deliveryImage} alt={t.photos.delivery} />
+        <div className="logistics__scrim" aria-hidden="true" />
         <div className="wrap logistics__grid">
-          <div className="logistics__lead">
-            <PhotoSlot id="logistics-truck" label={t.photos.truck} className="photo-slot--dark logistics__truck" />
-            <div className="logistics__copy">
-              <p className="eyebrow">{t.logistics.eyebrow}</p>
-              <h2>{t.logistics.title}</h2>
-              <p>{t.logistics.text}</p>
-              <a className="btn btn--primary" href={sectionHref(lang, 'process')}>
-                {t.logistics.more} <ArrowRight size={18} />
-              </a>
-            </div>
+          <div className="logistics__copy">
+            <p className="eyebrow">{t.logistics.eyebrow}</p>
+            <h2>{t.logistics.title}</h2>
+            <p>{t.logistics.text}</p>
+            <a className="btn btn--primary" href={sectionHref(lang, 'process')}>
+              {t.logistics.more} <ArrowRight size={18} />
+            </a>
           </div>
           <article className="partner-card">
             <h2>{t.partner.title}</h2>
@@ -205,7 +205,6 @@ export function HomePage() {
               {t.partner.cta}
             </Link>
           </article>
-          <PhotoSlot id="logistics-handshake" label={t.photos.handshake} className="photo-slot--dark logistics__hands" />
         </div>
       </section>
 
@@ -234,7 +233,34 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section section--soft" id="about">
+      <section className="section about" id="about">
+        <div className="wrap">
+          <div className="section-head">
+            <h2>
+              <span>{t.about.title}</span>
+              <i className="rule" aria-hidden="true" />
+            </h2>
+          </div>
+          <p className="about__lead">{t.about.lead}</p>
+          <div className="about__grid">
+            {aboutPoints.map((point) => (
+              <article key={point.id} className="about-card">
+                <span className="about-card__icon">
+                  <Icon name={point.icon} size={22} />
+                </span>
+                <h3>{t.about[`${point.id}Title`]}</h3>
+                <p>{t.about[point.id]}</p>
+              </article>
+            ))}
+          </div>
+          <p className="about__tagline">
+            <i className="rule" aria-hidden="true" />
+            <span>{t.about.tagline}</span>
+          </p>
+        </div>
+      </section>
+
+      <section className="section section--soft" id="clients">
         <div className="wrap clients">
           <h2>{t.clients.title}</h2>
           <ul className="client-list">

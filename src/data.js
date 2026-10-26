@@ -4,15 +4,20 @@ function logo(key, color) {
   return color ? { icon: marks[key], color } : { icon: marks[key] };
 }
 
+const image = (file) => `/images/${encodeURIComponent(file)}`;
+
+export const heroBanner = image('Main_banner.jpg');
+export const deliveryImage = image('Delivery.jpg');
+
 export const categories = [
-  { id: 'phones', icon: 'Smartphone', photo: 'category-phones' },
-  { id: 'computers', icon: 'Laptop', photo: 'category-computers' },
-  { id: 'tv', icon: 'Tv', photo: 'category-tv' },
-  { id: 'appliances', icon: 'Refrigerator', photo: 'category-appliances' },
-  { id: 'beauty', icon: 'Sparkles', photo: 'category-beauty' },
-  { id: 'home', icon: 'Microwave', photo: 'category-home' },
-  { id: 'smarthome', icon: 'HouseWifi', photo: 'category-smarthome' },
-  { id: 'accessories', icon: 'Cable', photo: 'category-accessories' },
+  { id: 'phones', icon: 'Smartphone', image: image('Mobile phones and smart devices.jpg') },
+  { id: 'computers', icon: 'Laptop', image: image('Computers and IT solutions.jpg') },
+  { id: 'tv', icon: 'Tv', image: image('TV audio and gaming.jpg') },
+  { id: 'appliances', icon: 'Refrigerator', image: image('Home appliances.jpg') },
+  { id: 'beauty', icon: 'Sparkles', image: image('Beauty and personal care.jpg') },
+  { id: 'home', icon: 'Microwave', image: image('Home and kitchen appliances.jpg') },
+  { id: 'smarthome', icon: 'HouseWifi', image: image('Smart home devices.jpg') },
+  { id: 'accessories', icon: 'Cable', image: image('Accessories and other goods.jpg') },
 ];
 
 export const values = [
@@ -25,6 +30,12 @@ export const values = [
 ];
 
 export const steps = ['apply', 'offer', 'order', 'delivery'];
+
+export const aboutPoints = [
+  { id: 'experience', icon: 'Award' },
+  { id: 'range', icon: 'Boxes' },
+  { id: 'trust', icon: 'Handshake' },
+];
 
 export const clients = [
   { id: 'retail', icon: 'Store' },

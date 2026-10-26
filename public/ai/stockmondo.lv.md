@@ -50,6 +50,10 @@ Skaistumkopšanas un mājsaimniecības zīmoli: Bosch, Siemens, Panasonic, Sharp
 3. Pasūtījums — apstiprinājums ar ērtiem norēķiniem.
 4. Piegāde — ātra un uzticama piegāde Eiropā.
 
+## Par mums
+
+STOCKMONDO ir B2B tirdzniecības uzņēmums, kas palīdz uzņēmumiem atrast izdevīgus preču iegādes piedāvājumus un organizēt piegādes Latvijā un Eiropā. Komanda apvieno 20 gadu pieredzi mobilo tālruņu mazumtirdzniecībā ar zināšanām produktu sagādē, izdevīgāko piedāvājumu meklēšanā, piegāžu organizēšanā un klientu apkalpošanā. Uzņēmums neaprobežojas ar vienu preču kategoriju un piedāvā elastīgus risinājumus dažādu nozaru uzņēmumiem. Sadarbības pamatā ir uzticība, personīga attieksme un abpusēji izdevīgi risinājumi. Sauklis: STOCKMONDO — Your Partner in Wholesale.
+
 ## Klienti
 
 Mazumtirdzniecības tīkli, specializētie veikali, uzņēmumi un valsts iestādes, servisa centri, sistēmu integratori un citi B2B klienti.

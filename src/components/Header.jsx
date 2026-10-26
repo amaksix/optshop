@@ -43,6 +43,7 @@ export function Header() {
       categories: 'categories',
       brands: 'brands',
       about: 'about',
+      clients: 'about',
       faq: 'faq',
     };
     const elements = Object.keys(map)

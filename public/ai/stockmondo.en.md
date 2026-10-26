@@ -50,6 +50,10 @@ This is the assortment direction. It is not a promise that every product is in s
 3. Order — confirmation with convenient payment.
 4. Delivery — fast and reliable delivery in Europe.
 
+## About us
+
+STOCKMONDO is a B2B trading company that helps businesses find advantageous purchasing offers and organize deliveries in Latvia and across Europe. The team combines 20 years of mobile phone retail experience with expertise in product sourcing, finding the best offers, organizing deliveries and customer service. The company is not limited to a single product category and offers flexible solutions to companies across different industries. Cooperation is built on trust, a personal approach and mutually beneficial solutions. Slogan: STOCKMONDO — Your Partner in Wholesale.
+
 ## Clients
 
 Retail chains, specialist stores, companies and public institutions, service centres, system integrators and other B2B clients.

@@ -117,6 +117,20 @@ export const translations = {
       order: { title: 'Pasūtījums', text: 'Apstipriniet pasūtījumu ar ērtiem norēķiniem' },
       delivery: { title: 'Piegāde', text: 'Nodrošinām ātru un uzticamu piegādi visā Eiropā' },
     },
+    about: {
+      title: 'Par mums',
+      lead: 'STOCKMONDO ir B2B tirdzniecības uzņēmums, kas palīdz uzņēmumiem atrast izdevīgus preču iegādes piedāvājumus un organizēt piegādes Latvijā un Eiropā.',
+      experienceTitle: '20 gadu pieredze',
+      experience:
+        'Mūsu komanda apvieno 20 gadu pieredzi mobilo tālruņu mazumtirdzniecībā ar zināšanām produktu sagādē, izdevīgāko piedāvājumu meklēšanā, piegāžu organizēšanā un klientu apkalpošanā.',
+      rangeTitle: 'Elastīgi risinājumi',
+      range:
+        'Mēs neaprobežojamies ar vienu preču kategoriju — mūsu mērķis ir piedāvāt elastīgus risinājumus dažādu nozaru uzņēmumiem.',
+      trustTitle: 'Uzticība un attieksme',
+      trust:
+        'Mēs ticam, ka veiksmīgas sadarbības pamatā ir uzticība, personīga attieksme un abpusēji izdevīgi risinājumi.',
+      tagline: 'STOCKMONDO — Your Partner in Wholesale.',
+    },
     clients: {
       title: 'Mūsu klienti ir uzņēmumi visā Eiropā',
       retail: 'Mazumtirdzniecības tīkli',
@@ -198,10 +212,17 @@ export const translations = {
       sitemap: 'Lapas karte',
     },
     photos: {
-      hero: 'Vieta fotogrāfijai: Eiropas karte',
-      truck: 'Vieta fotogrāfijai: piegādes transports',
-      handshake: 'Vieta fotogrāfijai: sadarbība',
+      hero: 'Eiropa naktī ar izgaismotiem pilsētu tīkliem un piegādes maršrutiem',
+      delivery: 'Balts kravas auto brauc pa šoseju zaļos pakalnos',
       category: 'Vieta fotogrāfijai',
+      phones: 'Trīs viedtālruņi, viedpulkstenis un bezvadu austiņas',
+      computers: 'Klēpjdators, monitors, galddators, tastatūra un pele',
+      tv: 'Televizors, skaņas panelis, spēļu konsole, pults, austiņas un skaļrunis',
+      appliances: 'Ledusskapis, kafijas automāts, veļas mašīna un putekļsūcējs',
+      beauty: 'Fēns, skuveklis, epilators, matu taisnotājs un kopšanas līdzekļi',
+      home: 'Multivārāmais katls, kafijas automāts, mikseris, tosteris un tējkanna',
+      smarthome: 'Robots-putekļsūcējs, kamera, viedais displejs, skaļrunis un viedās spuldzes',
+      accessories: 'Mugursoma, austiņas, ārējais akumulators, lādētāji un kabeļi',
     },
     search: {
       placeholder: 'Meklēt kategorijas un zīmolus',
@@ -378,6 +399,20 @@ export const translations = {
       order: { title: 'Order', text: 'Confirm the order with convenient payment' },
       delivery: { title: 'Delivery', text: 'Fast and reliable delivery across Europe' },
     },
+    about: {
+      title: 'About us',
+      lead: 'STOCKMONDO is a B2B trading company that helps businesses find advantageous purchasing offers and organize deliveries in Latvia and across Europe.',
+      experienceTitle: '20 years of experience',
+      experience:
+        'Our team combines 20 years of mobile phone retail experience with expertise in product sourcing, finding the best offers, organizing deliveries and customer service.',
+      rangeTitle: 'Flexible solutions',
+      range:
+        'We are not limited to a single product category — our goal is to offer flexible solutions to companies across different industries.',
+      trustTitle: 'Trust and attitude',
+      trust:
+        'We believe successful cooperation is built on trust, a personal approach and mutually beneficial solutions.',
+      tagline: 'STOCKMONDO — Your Partner in Wholesale.',
+    },
     clients: {
       title: 'Our clients are companies across Europe',
       retail: 'Retail chains',
@@ -459,10 +494,17 @@ export const translations = {
       sitemap: 'Sitemap',
     },
     photos: {
-      hero: 'Photo placeholder: map of Europe',
-      truck: 'Photo placeholder: delivery transport',
-      handshake: 'Photo placeholder: partnership',
+      hero: 'Europe at night with glowing city networks and delivery routes',
+      delivery: 'A white truck driving along a highway through green hills',
       category: 'Photo placeholder',
+      phones: 'Three smartphones, a smartwatch and wireless earbuds',
+      computers: 'Laptop, monitor, desktop tower, keyboard and mouse',
+      tv: 'Television, soundbar, game console, controller, headphones and speaker',
+      appliances: 'Refrigerator, coffee machine, washing machine and stick vacuum',
+      beauty: 'Hair dryer, shaver, epilator, straightener and personal care products',
+      home: 'Multicooker, coffee machine, stand mixer, toaster and kettle',
+      smarthome: 'Robot vacuum, security camera, smart display, speaker and smart bulbs',
+      accessories: 'Backpack, headphones, power bank, chargers and cables',
     },
     search: {
       placeholder: 'Search categories and brands',

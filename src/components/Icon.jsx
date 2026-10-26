@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  Award,
   BadgePercent,
   Boxes,
   Building2,
@@ -38,6 +39,7 @@ import {
 
 const iconMap = {
   ArrowRight,
+  Award,
   BadgePercent,
   Boxes,
   Building2,

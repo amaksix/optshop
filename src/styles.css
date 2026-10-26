@@ -366,21 +366,35 @@ a { color: inherit; }
   overflow: hidden;
 }
 
+.hero__banner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 24, 46, 0.88) 0%, rgba(7, 24, 46, 0.62) 34%, rgba(7, 24, 46, 0.18) 58%, transparent 76%);
+  pointer-events: none;
+}
+
 .hero__grid {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 1.45fr);
-  gap: 24px;
+  z-index: 1;
+  display: flex;
   align-items: center;
   min-height: 560px;
-  padding: 56px 0 64px;
+  padding: 72px 0 80px;
 }
 
 .hero__copy {
   position: relative;
   z-index: 2;
-  width: calc(100% + 220px);
-  max-width: none;
+  width: min(540px, 100%);
 }
 
 .eyebrow {
@@ -416,23 +430,6 @@ a { color: inherit; }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.hero__media {
-  position: relative;
-  height: 420px;
-  border-radius: 18px;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.hero__shade {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 160px;
-  background: linear-gradient(90deg, var(--navy-deep) 0%, rgba(7, 24, 46, 0.2) 42%, transparent 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .photo-slot {
   height: 100%;
   min-height: 160px;
@@ -462,16 +459,32 @@ a { color: inherit; }
 .photo-slot__label { font-size: 14px; line-height: 1.3; max-width: 240px; }
 .photo-slot__file { font-size: 12px; font-weight: 700; opacity: 0.75; }
 
+.photo-slot--image {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.photo-slot--image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .values {
   background: #fff;
   border-bottom: 1px solid var(--line);
+  padding: 72px 0;
 }
 
 .values__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 12px;
-  padding: 28px 0;
 }
 
 .value {
@@ -636,23 +649,38 @@ a { color: inherit; }
 }
 
 .logistics {
-  background:
-    radial-gradient(900px 320px at 0% 0%, rgba(36, 84, 150, 0.35), transparent 60%),
-    var(--navy-deep);
+  position: relative;
+  background: var(--navy-deep);
   color: #fff;
+  overflow: hidden;
+}
+
+.logistics__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 72%;
+}
+
+.logistics__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 24, 46, 0.82) 0%, rgba(7, 24, 46, 0.58) 34%, rgba(7, 24, 46, 0.22) 62%, rgba(7, 24, 46, 0.12) 100%);
+  pointer-events: none;
 }
 
 .logistics__grid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: 1.15fr 0.9fr 210px;
-  gap: 22px;
-  align-items: stretch;
-  padding: 48px 0;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+  padding: 64px 0;
 }
 
-.logistics__lead { display: grid; gap: 18px; align-content: start; }
-.logistics__truck { min-height: 190px; border-radius: 16px; overflow: hidden; }
-.logistics__hands { border-radius: 16px; overflow: hidden; min-height: 100%; }
 .logistics__copy h2 {
   font-size: clamp(32px, 4vw, 46px);
   letter-spacing: -0.03em;
@@ -705,6 +733,69 @@ a { color: inherit; }
 
 .step h3 { color: var(--navy); font-size: 18px; }
 .step p { color: var(--muted); font-size: 14px; }
+
+.about__lead {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 62ch;
+  margin: -6px 0 28px;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.about-card {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.about-card h3 {
+  color: var(--navy);
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.about-card p {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.about-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #fff1eb;
+  color: var(--orange);
+  display: grid;
+  place-items: center;
+}
+
+.about__tagline {
+  margin-top: 16px;
+  background: var(--navy-deep);
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(16px, 2vw, 20px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.about__tagline .rule { background: var(--orange); }
 
 .clients h2 { max-width: none; margin-bottom: 0; display: block; }
 
@@ -1062,7 +1153,6 @@ body.dialog-open { overflow: hidden; }
   .brand-grid { grid-template-columns: repeat(4, 1fr); }
   .client-list { grid-template-columns: repeat(3, 1fr); }
   .logistics__grid { grid-template-columns: 1fr 1fr; }
-  .logistics__hands { grid-column: 1 / -1; min-height: 180px; }
 }
 
 @media (max-width: 1080px) {
@@ -1106,31 +1196,26 @@ body.dialog-open { overflow: hidden; }
 }
 
 @media (max-width: 1080px) {
+  .hero__banner { object-position: 78% center; }
+  .hero__scrim {
+    background: linear-gradient(180deg, rgba(7, 24, 46, 0.88) 0%, rgba(7, 24, 46, 0.72) 48%, rgba(7, 24, 46, 0.28) 100%);
+  }
   .hero__grid {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 0;
-    padding: 32px 0 28px;
-    gap: 22px;
+    min-height: 460px;
+    padding: 48px 0 56px;
   }
-  .hero__media {
-    position: relative;
-    right: auto;
-    width: 100%;
-    height: 220px;
-    border-radius: 16px;
-    overflow: hidden;
-    order: 2;
-  }
-  .hero__shade { display: none; }
-  .hero__copy { order: 1; width: auto; }
+  .hero__copy { width: min(100%, 560px); }
   .values__grid { grid-template-columns: repeat(3, 1fr); gap: 18px 10px; }
   .category-grid, .news-grid, .legal__grid { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
-  .logistics__grid { grid-template-columns: 1fr; }
+  .logistics__grid { grid-template-columns: 1fr; gap: 22px; }
+  .logistics__bg { object-position: center 70%; }
+  .logistics__scrim {
+    background: linear-gradient(180deg, rgba(7, 24, 46, 0.78) 0%, rgba(7, 24, 46, 0.5) 42%, rgba(7, 24, 46, 0.28) 100%);
+  }
+  .about__lead { max-width: none; }
 }
 
 @media (max-width: 700px) {
@@ -1142,6 +1227,7 @@ body.dialog-open { overflow: hidden; }
   .category-grid, .news-grid, .legal__grid, .steps, .footer__grid { grid-template-columns: 1fr; }
   .brand-grid { grid-template-columns: repeat(2, 1fr); }
   .client-list { grid-template-columns: 1fr 1fr; }
+  .about__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; align-items: stretch; }
   .cookie-banner__inner { flex-direction: column; align-items: stretch; }
   .footer__signup { justify-items: start; width: 100%; }

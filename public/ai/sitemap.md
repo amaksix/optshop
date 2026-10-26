@@ -36,7 +36,8 @@ Latvian is the default. Add `?lang=en` for English. Anchors are on the home page
 - `#brands` — brand grid with technology and household tabs.
 - `#partner` — European delivery and the "become a client" card. Register opens the contact form.
 - `#process` — application, offer, order, delivery.
-- `#about` — types of client companies.
+- `#about` — company story: B2B trading, 20 years of experience, flexible solutions and trust.
+- `#clients` — types of client companies.
 - `#news` — short company updates. Not separate articles.
 - `#news-range`, `#news-delivery`, `#news-b2b` — the three update cards.
 - `#faq` — five questions.
