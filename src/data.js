@@ -4,7 +4,7 @@ function logo(key, color) {
   return color ? { icon: marks[key], color } : { icon: marks[key] };
 }
 
-const image = (file) => `/images/${encodeURIComponent(file)}`;
+const image = (file) => `${import.meta.env.BASE_URL}images/${encodeURIComponent(file)}`;
 
 export const heroBanner = image('Main_banner.jpg');
 export const deliveryImage = image('Delivery.jpg');
