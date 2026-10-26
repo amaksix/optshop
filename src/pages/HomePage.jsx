@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { BrandLogo } from '../components/BrandLogo';
@@ -30,6 +30,8 @@ export function HomePage() {
   const [showAllBrands, setShowAllBrands] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const categoryPin = useRef(null);
+  const logisticsRef = useRef(null);
+  const logisticsBgRef = useRef(null);
 
   const toggleCategories = () => {
     const section = document.getElementById('categories');
@@ -61,6 +63,48 @@ export function HomePage() {
     });
     return () => cancelAnimationFrame(frame);
   }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    const section = logisticsRef.current;
+    const bg = logisticsBgRef.current;
+    if (!section || !bg) return;
+
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      if (motion.matches) {
+        bg.style.transform = '';
+        return;
+      }
+
+      const rect = section.getBoundingClientRect();
+      const view = window.innerHeight || 1;
+      if (rect.bottom < 0 || rect.top > view) return;
+
+      const progress = (view - rect.top) / (view + rect.height);
+      const travel = Math.max(rect.height, view) * 0.85;
+      bg.style.transform = `translate3d(0, ${(progress - 0.5) * travel}px, 0)`;
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    motion.addEventListener('change', update);
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      motion.removeEventListener('change', update);
+    };
+  }, []);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -114,10 +158,7 @@ export function HomePage() {
       <section className="section" id="categories">
         <div className="wrap">
           <div className="section-head">
-            <h2>
-              <span>{t.categories.title}</span>
-              <i className="rule" aria-hidden="true" />
-            </h2>
+            <h2>{t.categories.title}</h2>
             <button type="button" className="text-link" onClick={toggleCategories}>
               {showAllCategories ? t.categories.showLess : t.categories.seeAll} <ArrowRight size={16} />
             </button>
@@ -137,10 +178,7 @@ export function HomePage() {
       <section className="section section--soft" id="brands">
         <div className="wrap">
           <div className="section-head">
-            <h2>
-              <span>{t.brands.title}</span>
-              <i className="rule" aria-hidden="true" />
-            </h2>
+            <h2>{t.brands.title}</h2>
             <button type="button" className={`text-link ${showAllBrands ? 'is-active' : ''}`} onClick={() => setShowAllBrands((open) => !open)}>
               {showAllBrands ? t.brands.showLine : t.brands.seeAll} <ArrowRight size={16} />
             </button>
@@ -178,17 +216,34 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="logistics" id="partner">
-        <img className="logistics__bg" src={deliveryImage} alt={t.photos.delivery} />
+      <section className="section" id="process">
+        <div className="wrap">
+          <div className="section-head">
+            <h2>{t.process.title}</h2>
+            <a className="text-link" href={sectionHref(lang, 'faq')}>
+              {t.process.more} <ArrowRight size={16} />
+            </a>
+          </div>
+          <ol className="steps">
+            {steps.map((step, index) => (
+              <li key={step} className="step">
+                <span className="step__num">{index + 1}</span>
+                <h3>{t.process[step].title}</h3>
+                <p>{t.process[step].text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="logistics" id="partner" ref={logisticsRef}>
+        <img className="logistics__bg" src={deliveryImage} alt={t.photos.delivery} ref={logisticsBgRef} />
         <div className="logistics__scrim" aria-hidden="true" />
         <div className="wrap logistics__grid">
           <div className="logistics__copy">
             <p className="eyebrow">{t.logistics.eyebrow}</p>
             <h2>{t.logistics.title}</h2>
             <p>{t.logistics.text}</p>
-            <a className="btn btn--primary" href={sectionHref(lang, 'process')}>
-              {t.logistics.more} <ArrowRight size={18} />
-            </a>
           </div>
           <article className="partner-card">
             <h2>{t.partner.title}</h2>
@@ -208,55 +263,24 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section" id="process">
-        <div className="wrap">
-          <div className="section-head">
-            <h2>
-              <span>{t.process.title}</span>
-              <i className="rule" aria-hidden="true" />
-            </h2>
-            <a className="text-link" href={sectionHref(lang, 'faq')}>
-              {t.process.more} <ArrowRight size={16} />
-            </a>
-          </div>
-          <ol className="steps">
-            {steps.map((step, index) => (
-              <li key={step} className="step">
-                <span className="step__num">{index + 1}</span>
-                <div>
-                  <h3>{t.process[step].title}</h3>
-                  <p>{t.process[step].text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section className="section about" id="about">
         <div className="wrap">
           <div className="section-head">
-            <h2>
-              <span>{t.about.title}</span>
-              <i className="rule" aria-hidden="true" />
-            </h2>
+            <h2>{t.about.title}</h2>
           </div>
           <p className="about__lead">{t.about.lead}</p>
           <div className="about__grid">
             {aboutPoints.map((point) => (
               <article key={point.id} className="about-card">
                 <span className="about-card__icon">
-                  <Icon name={point.icon} size={22} />
+                  <Icon name={point.icon} size={22} strokeWidth={2} />
                 </span>
                 <h3>{t.about[`${point.id}Title`]}</h3>
                 <p>{t.about[point.id]}</p>
               </article>
             ))}
           </div>
-          <p className="about__tagline">
-            <i className="rule" aria-hidden="true" />
-            <span>{t.about.tagline}</span>
-          </p>
+          <p className="about__tagline">{t.about.tagline}</p>
         </div>
       </section>
 
@@ -277,10 +301,7 @@ export function HomePage() {
       <section className="section" id="news">
         <div className="wrap">
           <div className="section-head">
-            <h2>
-              <span>{t.news.title}</span>
-              <i className="rule" aria-hidden="true" />
-            </h2>
+            <h2>{t.news.title}</h2>
           </div>
           <div className="news-grid">
             {newsItems.map((item) => (
