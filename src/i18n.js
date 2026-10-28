@@ -40,7 +40,7 @@ export const translations = {
       terms: 'Konkurētspējīgi nosacījumi',
       b2b: 'Individuāli B2B risinājumi',
       support: 'Profesionāls atbalsts',
-      europe: 'Sadarbība ar uzņēmumiem visā Eiropā',
+      europe: 'Uzticams partneris',
     },
     categories: {
       title: 'Produktu kategorijas',
@@ -132,28 +132,10 @@ export const translations = {
       tagline: 'STOCKMONDO — Your Partner in Wholesale.',
     },
     clients: {
-      title: 'Mūsu klienti ir uzņēmumi visā Eiropā',
-      retail: 'Mazumtirdzniecības tīkli',
-      shops: 'Specializētie veikali',
-      institutions: 'Uzņēmumi un valsts iestādes',
-      service: 'Servisa centri',
-      integrators: 'Sistēmu integratori',
-      other: 'Citi B2B klienti',
-    },
-    news: {
-      title: 'Jaunumi',
-      range: {
-        title: 'Sortiments turpina augt',
-        text: 'Tehnoloģiju un mājsaimniecības zīmolu klāsts tiek papildināts, lai mazumtirdzniecības partneri varētu piedāvāt plašāku izvēli.',
-      },
-      delivery: {
-        title: 'Piegādes vairāk nekā 30 valstīs',
-        text: 'Loģistikas tīkls aptver Eiropu. Konkrētu maršrutu un termiņu apstiprinām kopā ar individuālo piedāvājumu.',
-      },
-      b2b: {
-        title: 'Individuāli B2B nosacījumi',
-        text: 'Pēc reģistrācijas katram klientam ir savs menedžeris, cenu piedāvājums un piegādes ritms.',
-      },
+      title: 'Kam mēs piedāvājam savus produktus?',
+      wholesalers: 'Vairumtirgotājiem',
+      online: 'Interneta veikaliem',
+      retail: 'Mazumtirdzniecības veikaliem',
     },
     faq: {
       title: 'Biežāk uzdotie jautājumi',
@@ -173,10 +155,6 @@ export const translations = {
         {
           q: 'Kā pieprasīt cenu?',
           a: 'Aizpildiet kontaktformu un norādiet interesējošās kategorijas. Sagatavosim individuālu cenu piedāvājumu.',
-        },
-        {
-          q: 'Vai pārdodat privātpersonām?',
-          a: 'Nē. StockMondo ir vairumtirdzniecības partneris uzņēmumiem. Privātpersonu pasūtījumus nepieņemam.',
         },
       ],
     },
@@ -210,6 +188,8 @@ export const translations = {
       privacy: 'Privātuma politika',
       cookies: 'Sīkdatnes',
       sitemap: 'Lapas karte',
+      contactUs: 'Sazinieties ar mums',
+      contactRole: 'Vadītāja | B2B sadarbība',
     },
     photos: {
       hero: 'Eiropa naktī ar izgaismotiem pilsētu tīkliem un piegādes maršrutiem',
@@ -322,7 +302,7 @@ export const translations = {
       terms: 'Competitive terms',
       b2b: 'Individual B2B solutions',
       support: 'Professional support',
-      europe: 'Cooperation with companies across Europe',
+      europe: 'Reliable partner',
     },
     categories: {
       title: 'Product categories',
@@ -414,28 +394,10 @@ export const translations = {
       tagline: 'STOCKMONDO — Your Partner in Wholesale.',
     },
     clients: {
-      title: 'Our clients are companies across Europe',
-      retail: 'Retail chains',
-      shops: 'Specialist stores',
-      institutions: 'Companies and public institutions',
-      service: 'Service centres',
-      integrators: 'System integrators',
-      other: 'Other B2B clients',
-    },
-    news: {
-      title: 'News',
-      range: {
-        title: 'The assortment keeps growing',
-        text: 'Technology and household brands are added so retail partners can offer a wider choice.',
-      },
-      delivery: {
-        title: 'Delivery to more than 30 countries',
-        text: 'The logistics network covers Europe. The route and timing are confirmed with each individual offer.',
-      },
-      b2b: {
-        title: 'Individual B2B terms',
-        text: 'After registration, each client gets a manager, a price offer and a delivery rhythm.',
-      },
+      title: 'Who do we offer our products to?',
+      wholesalers: 'Wholesalers',
+      online: 'Online stores',
+      retail: 'Retail stores',
     },
     faq: {
       title: 'Frequently asked questions',
@@ -455,10 +417,6 @@ export const translations = {
         {
           q: 'How do I request a price?',
           a: 'Fill in the contact form and mark the categories you need. We will prepare an individual price offer.',
-        },
-        {
-          q: 'Do you sell to private individuals?',
-          a: 'No. StockMondo is a wholesale partner for companies. We do not take consumer orders.',
         },
       ],
     },
@@ -492,6 +450,8 @@ export const translations = {
       privacy: 'Privacy policy',
       cookies: 'Cookies',
       sitemap: 'Sitemap',
+      contactUs: 'Contact us',
+      contactRole: 'Manager | B2B cooperation',
     },
     photos: {
       hero: 'Europe at night with glowing city networks and delivery routes',

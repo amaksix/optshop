@@ -38,9 +38,7 @@ Latvian is the default. Add `?lang=en` for English. Anchors are on the home page
 - `#process` — application, offer, order, delivery.
 - `#about` — company story: B2B trading, 20 years of experience, flexible solutions and trust.
 - `#clients` — types of client companies.
-- `#news` — short company updates. Not separate articles.
-- `#news-range`, `#news-delivery`, `#news-b2b` — the three update cards.
-- `#faq` — five questions.
+- `#faq` — four questions.
 - Privacy policy and cookies open in a dialog from the footer. They are not separate pages. The sitemap file is `/sitemap.xml`.
 
 ## Contact form fields

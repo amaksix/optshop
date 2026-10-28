@@ -26,7 +26,7 @@ export const values = [
   { id: 'terms', icon: 'BadgePercent' },
   { id: 'b2b', icon: 'Handshake' },
   { id: 'support', icon: 'Headset' },
-  { id: 'europe', icon: 'Globe' },
+  { id: 'europe', icon: 'ShieldCheck' },
 ];
 
 export const steps = ['apply', 'offer', 'order', 'delivery'];
@@ -38,23 +38,14 @@ export const aboutPoints = [
 ];
 
 export const clients = [
+  { id: 'wholesalers', icon: 'Warehouse' },
+  { id: 'online', icon: 'ShoppingCart' },
   { id: 'retail', icon: 'Store' },
-  { id: 'shops', icon: 'ShoppingBag' },
-  { id: 'institutions', icon: 'Building2' },
-  { id: 'service', icon: 'Wrench' },
-  { id: 'integrators', icon: 'Network' },
-  { id: 'other', icon: 'Handshake' },
 ];
 
 export const partnerPoints = ['prices', 'catalogue', 'delivery', 'manager'];
 
 export const topics = ['client', 'quote', 'general', 'career'];
-
-export const newsItems = [
-  { id: 'range', icon: 'Boxes' },
-  { id: 'delivery', icon: 'Truck' },
-  { id: 'b2b', icon: 'Handshake' },
-];
 
 export const techBrands = [
   { name: 'Samsung', ...logo('siSamsung') },

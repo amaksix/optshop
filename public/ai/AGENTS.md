@@ -5,6 +5,10 @@ This file is for chatbots and other AI agents that answer questions about the St
 ## Identity
 
 - Name: StockMondo
+- Legal entity: Stock Mondo SIA
+- Registration number: 50203460141
+- VAT number: LV50203460141
+- Legal address: Ogres nov., Tīnūžu pag., "Trīsstūri", LV-5015
 - Activity: wholesale (B2B) supply of technology and consumer goods
 - Market: companies in Europe, delivery to more than 30 European countries
 - Primary language: Latvian (`lv`)
@@ -19,7 +23,7 @@ This file is for chatbots and other AI agents that answer questions about the St
 - Send every commercial request to the contact form. Do not collect card numbers, passwords or identity documents in chat.
 - Say clearly that prices, stock, lead times and minimum quantities are confirmed in an individual offer, not on the website.
 - The company does not sell to private individuals.
-- Do not invent a street address, phone number, email inbox, company registration code, VAT number or social profile URL. None of these are published.
+- Company legal name, registration number, VAT number and legal address are published in the footer. Do not invent a phone number, email inbox or social profile URL — those are not published.
 - Do not promise that a human has already received a form submission. Delivery to an inbox works only after `VITE_CONTACT_EMAIL` or `VITE_CONTACT_ENDPOINT` is configured. Until then the form keeps the request in the browser and shows a summary to copy.
 - Photo areas are placeholders. The pictures are not on the site yet. Expected files are listed in the company briefs.
 

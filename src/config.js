@@ -4,12 +4,19 @@ export const site = {
   tagline: 'Technology wholesale · Europe',
 };
 
-/** Fill these in when the company details are confirmed. Empty values show as a dash. */
+/** Legal entity details shown in the site footer. */
 export const company = {
-  legalName: '',
-  registrationNumber: '',
-  vatNumber: '',
-  address: '',
+  legalName: 'Stock Mondo SIA',
+  registrationNumber: '50203460141',
+  vatNumber: 'LV50203460141',
+  address: 'Ogres nov., Tīnūžu pag., "Trīsstūri", LV-5015',
+};
+
+/** Primary contact shown in the site footer. */
+export const contactPerson = {
+  name: 'Inese Hlibova',
+  phone: '+371 29444224',
+  email: 'sales@stockmondo.com',
 };
 
 export const contactDelivery = {

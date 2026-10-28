@@ -66,7 +66,16 @@ Lauki: pieprasījuma veids (kļūt par klientu, pieprasīt piedāvājumu, vispā
 
 Valsts lauks ir uzņēmuma valsts, nevis automātisks piegādes solījums uz katru no saraksta valstīm.
 
-Iela, tālrunis, e-pasta pastkaste un reģistrācijas dati vietnē nav publicēti. Kamēr nav iestatīta `VITE_CONTACT_EMAIL` vai `VITE_CONTACT_ENDPOINT`, forma saglabā pieteikumu pārlūkā un parāda kopsavilkumu kopēšanai. Nepasaki, ka cilvēks pieteikumu jau ir saņēmis, ja šī piegāde nav pieslēgta.
+## Uzņēmuma rekvizīti
+
+Kājenē publicēti:
+
+- Juridiskais nosaukums: Stock Mondo SIA
+- Reģ. Nr.: 50203460141
+- PVN Nr.: LV50203460141
+- Juridiskā adrese: Ogres nov., Tīnūžu pag., "Trīsstūri", LV-5015
+
+Tālrunis un e-pasta pastkaste vietnē nav publicēti. Kamēr nav iestatīta `VITE_CONTACT_EMAIL` vai `VITE_CONTACT_ENDPOINT`, forma saglabā pieteikumu pārlūkā un parāda kopsavilkumu kopēšanai. Nepasaki, ka cilvēks pieteikumu jau ir saņēmis, ja šī piegāde nav pieslēgta.
 
 ## Foto vietas
 

@@ -15,7 +15,6 @@ import {
   deliveryImage,
   heroBanner,
   homeBrands,
-  newsItems,
   partnerPoints,
   steps,
   techBrands,
@@ -263,6 +262,20 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="section section--soft" id="clients">
+        <div className="wrap clients">
+          <h2>{t.clients.title}</h2>
+          <ul className="client-list">
+            {clients.map((client) => (
+              <li key={client.id}>
+                <Icon name={client.icon} size={32} strokeWidth={1.5} />
+                <span>{t.clients[client.id]}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="section about" id="about">
         <div className="wrap">
           <div className="section-head">
@@ -281,39 +294,6 @@ export function HomePage() {
             ))}
           </div>
           <p className="about__tagline">{t.about.tagline}</p>
-        </div>
-      </section>
-
-      <section className="section section--soft" id="clients">
-        <div className="wrap clients">
-          <h2>{t.clients.title}</h2>
-          <ul className="client-list">
-            {clients.map((client) => (
-              <li key={client.id}>
-                <Icon name={client.icon} size={32} strokeWidth={1.5} />
-                <span>{t.clients[client.id]}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section" id="news">
-        <div className="wrap">
-          <div className="section-head">
-            <h2>{t.news.title}</h2>
-          </div>
-          <div className="news-grid">
-            {newsItems.map((item) => (
-              <article key={item.id} className="news-card" id={`news-${item.id}`}>
-                <span className="news-card__icon">
-                  <Icon name={item.icon} size={22} />
-                </span>
-                <h3>{t.news[item.id].title}</h3>
-                <p>{t.news[item.id].text}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 

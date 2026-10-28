@@ -66,7 +66,16 @@ Fields: request type (become a client, request a quote, general question, career
 
 The country field is the company's country. It is not an automatic promise to deliver to every country in the list.
 
-A street address, phone number, inbox and registration details are not published. Until `VITE_CONTACT_EMAIL` or `VITE_CONTACT_ENDPOINT` is set, the form stores the request in the browser and shows a summary to copy. Do not say a person has already received it if that delivery is not connected.
+## Company details
+
+Published in the footer:
+
+- Legal name: Stock Mondo SIA
+- Reg. No.: 50203460141
+- VAT No.: LV50203460141
+- Legal address: Ogres nov., Tīnūžu pag., "Trīsstūri", LV-5015
+
+A phone number and email inbox are not published. Until `VITE_CONTACT_EMAIL` or `VITE_CONTACT_ENDPOINT` is set, the form stores the request in the browser and shows a summary to copy. Do not say a person has already received it if that delivery is not connected.
 
 ## Photo slots
 

@@ -1,17 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
-import { company } from '../config';
+import { Mail, Phone } from 'lucide-react';
+import { company, contactPerson } from '../config';
 import { useI18n } from '../context/Language';
 import { useLegal } from '../context/Legal';
 import { contactHref, sectionHref } from '../lib/nav';
 import { Logo } from './Logo';
-
-const socials = [
-  { id: 'linkedin', Icon: Linkedin },
-  { id: 'instagram', Icon: Instagram },
-  { id: 'facebook', Icon: Facebook },
-  { id: 'youtube', Icon: Youtube },
-];
 
 function Fact({ label, value }) {
   return (
@@ -26,18 +19,25 @@ export function Footer() {
   const { lang, t } = useI18n();
   const { setOpen } = useLegal();
   const year = new Date().getFullYear();
+  const phoneHref = `tel:${contactPerson.phone.replace(/\s+/g, '')}`;
 
   return (
     <footer className="footer">
       <div className="wrap footer__grid">
         <div className="footer__brand">
           <Logo />
-          <div className="socials">
-            {socials.map(({ id, Icon }) => (
-              <span key={id} className="social" aria-hidden="true">
-                <Icon size={16} />
-              </span>
-            ))}
+          <div className="footer-contact">
+            <p className="footer-contact__title">{t.footer.contactUs}</p>
+            <p className="footer-contact__name">{contactPerson.name}</p>
+            <p className="footer-contact__role">{t.footer.contactRole}</p>
+            <a className="footer-contact__link" href={phoneHref}>
+              <Phone size={16} aria-hidden="true" />
+              <span>{contactPerson.phone}</span>
+            </a>
+            <a className="footer-contact__link" href={`mailto:${contactPerson.email}`}>
+              <Mail size={16} aria-hidden="true" />
+              <span>{contactPerson.email}</span>
+            </a>
           </div>
         </div>
 
@@ -61,9 +61,6 @@ export function Footer() {
             </li>
             <li>
               <button type="button" onClick={() => setOpen('cookies')}>{t.footer.cookies}</button>
-            </li>
-            <li>
-              <a href={`${import.meta.env.BASE_URL}sitemap.xml`}>{t.footer.sitemap}</a>
             </li>
           </ul>
         </div>
