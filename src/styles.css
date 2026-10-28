@@ -828,6 +828,8 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--block-gap);
+  width: min(100%, 560px);
+  margin-inline: auto;
   text-align: center;
 }
 
