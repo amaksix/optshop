@@ -44,7 +44,7 @@ export function LangSwitch({ className = '' }) {
       </button>
       {open ? (
         <ul className="lang__menu" role="listbox" aria-label={t.nav.language}>
-          {['lv', 'en'].map((code) => (
+          {['en', 'lv'].map((code) => (
             <li key={code}>
               <button type="button" role="option" aria-selected={lang === code} onClick={() => choose(code)}>
                 <Flag code={code} />

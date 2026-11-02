@@ -29,8 +29,13 @@ export function HomePage() {
   const [showAllBrands, setShowAllBrands] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const categoryPin = useRef(null);
+  const processRef = useRef(null);
+  const aboutRef = useRef(null);
   const logisticsRef = useRef(null);
   const logisticsBgRef = useRef(null);
+  const [revealProcess, setRevealProcess] = useState(false);
+  const [revealAbout, setRevealAbout] = useState(false);
+  const [revealPartner, setRevealPartner] = useState(false);
 
   const toggleCategories = () => {
     const section = document.getElementById('categories');
@@ -62,6 +67,38 @@ export function HomePage() {
     });
     return () => cancelAnimationFrame(frame);
   }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (prefersReducedMotion()) {
+      setRevealProcess(true);
+      setRevealAbout(true);
+      setRevealPartner(true);
+      return;
+    }
+
+    const nodes = [
+      { el: processRef.current, reveal: () => setRevealProcess(true) },
+      { el: aboutRef.current, reveal: () => setRevealAbout(true) },
+      { el: logisticsRef.current, reveal: () => setRevealPartner(true) },
+    ].filter((item) => item.el);
+
+    if (!nodes.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const match = nodes.find((item) => item.el === entry.target);
+          match?.reveal();
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.42, rootMargin: '0px 0px -22% 0px' },
+    );
+
+    nodes.forEach(({ el }) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const section = logisticsRef.current;
@@ -113,7 +150,7 @@ export function HomePage() {
     slogan: site.tagline,
     description: t.meta.homeDescription,
     areaServed: 'Europe',
-    knowsLanguage: ['lv', 'en'],
+    knowsLanguage: ['en', 'lv'],
   };
 
   const visibleCategories = showAllCategories ? categories : categories.slice(0, 4);
@@ -135,9 +172,9 @@ export function HomePage() {
             </h1>
             <p className="hero__text">{t.hero.text}</p>
             <div className="hero__actions">
-              <a className="btn btn--primary" href={sectionHref(lang, 'partner')}>
+              <Link className="btn btn--primary" to={contactHref(lang)}>
                 {t.hero.ctaPartner} <ArrowRight size={18} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -212,10 +249,11 @@ export function HomePage() {
               </ul>
             </div>
           )}
+          <p className="brand-disclaimer">{t.brands.disclaimer}</p>
         </div>
       </section>
 
-      <section className="section" id="process">
+      <section className={`section${revealProcess ? ' is-inview' : ''}`} id="process" ref={processRef}>
         <div className="wrap">
           <div className="section-head">
             <h2>{t.process.title}</h2>
@@ -235,7 +273,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="logistics" id="partner" ref={logisticsRef}>
+      <section className={`logistics${revealPartner ? ' is-inview' : ''}`} id="partner" ref={logisticsRef}>
         <img className="logistics__bg" src={deliveryImage} alt={t.photos.delivery} ref={logisticsBgRef} />
         <div className="logistics__scrim" aria-hidden="true" />
         <div className="wrap logistics__grid">
@@ -244,7 +282,7 @@ export function HomePage() {
             <h2>{t.logistics.title}</h2>
             <p>{t.logistics.text}</p>
           </div>
-          <article className="partner-card">
+          <aside className="partner-panel">
             <h2>{t.partner.title}</h2>
             <p>{t.partner.text}</p>
             <ul>
@@ -255,10 +293,10 @@ export function HomePage() {
                 </li>
               ))}
             </ul>
-            <Link className="btn btn--primary" to={contactHref(lang, 'client')}>
+            <Link className="btn btn--primary" to={contactHref(lang)}>
               {t.partner.cta}
             </Link>
-          </article>
+          </aside>
         </div>
       </section>
 
@@ -276,7 +314,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section about" id="about">
+      <section className={`section about${revealAbout ? ' is-inview' : ''}`} id="about" ref={aboutRef}>
         <div className="wrap">
           <div className="section-head">
             <h2>{t.about.title}</h2>

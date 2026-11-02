@@ -1,20 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { Check, Copy } from 'lucide-react';
 import { Seo } from '../components/Seo';
 import { contactDelivery } from '../config';
 import { useI18n } from '../context/Language';
-import { categories, countries, topics } from '../data';
+import { countries } from '../data';
 
 const emptyForm = {
-  topic: 'client',
   company: '',
   reg: '',
   person: '',
   email: '',
   phone: '',
   country: 'LV',
-  interests: [],
   message: '',
   consent: false,
   website: '',
@@ -36,22 +33,11 @@ function remember(entry) {
 
 export function ContactPage() {
   const { lang, t } = useI18n();
-  const [params] = useSearchParams();
-  const topicFromUrl = params.get('topic');
-  const [form, setForm] = useState(() => ({
-    ...emptyForm,
-    topic: topics.includes(topicFromUrl) ? topicFromUrl : 'client',
-  }));
+  const [form, setForm] = useState(emptyForm);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
   const [summary, setSummary] = useState('');
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    if (topics.includes(topicFromUrl)) {
-      setForm((current) => ({ ...current, topic: topicFromUrl }));
-    }
-  }, [topicFromUrl]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -62,28 +48,17 @@ export function ContactPage() {
     setForm((current) => ({ ...current, [name]: type === 'checkbox' ? checked : value }));
   };
 
-  const toggleInterest = (id) => {
-    setForm((current) => ({
-      ...current,
-      interests: current.interests.includes(id)
-        ? current.interests.filter((item) => item !== id)
-        : [...current.interests, id],
-    }));
-  };
-
   const buildSummary = (value) => {
     const country = countries.find((item) => item[0] === value.country);
     const countryName = country ? country[lang === 'lv' ? 1 : 2] : value.country;
-    const interestNames = value.interests.map((id) => t.categories[id].title).join(', ');
     return [
-      `StockMondo — ${t.contact.topics[value.topic]}`,
+      'StockMondo',
       `${t.contact.company}: ${value.company}`,
       `${t.contact.reg}: ${value.reg || '—'}`,
       `${t.contact.person}: ${value.person}`,
       `${t.contact.email}: ${value.email}`,
       `${t.contact.phone}: ${value.phone}`,
       `${t.contact.country}: ${countryName}`,
-      `${t.contact.interests}: ${interestNames || '—'}`,
       '',
       value.message.trim(),
     ].join('\n');
@@ -137,7 +112,7 @@ export function ContactPage() {
     }
 
     if (contactDelivery.email) {
-      const subject = encodeURIComponent(`StockMondo — ${t.contact.topics[form.topic]}`);
+      const subject = encodeURIComponent('StockMondo');
       const body = encodeURIComponent(text);
       window.location.href = `mailto:${contactDelivery.email}?subject=${subject}&body=${body}`;
       setStatus('mailto');
@@ -163,7 +138,7 @@ export function ContactPage() {
   };
 
   const reset = () => {
-    setForm({ ...emptyForm, topic: form.topic, country: form.country });
+    setForm({ ...emptyForm, country: form.country });
     setErrors({});
     setStatus('idle');
     setSummary('');
@@ -206,25 +181,7 @@ export function ContactPage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={onSubmit} noValidate>
-              <fieldset className="topics">
-                <legend>{t.contact.topic}</legend>
-                <div className="topics__row">
-                  {topics.map((topic) => (
-                    <label key={topic}>
-                      <input
-                        type="radio"
-                        name="topic"
-                        value={topic}
-                        checked={form.topic === topic}
-                        onChange={onChange}
-                      />
-                      {t.contact.topics[topic]}
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-
+            <form className="contact-form" onSubmit={onSubmit} noValidate>
               <div className="form-grid">
                 <Field id="company" label={t.contact.company} error={errors.company} required>
                   <input id="company" name="company" value={form.company} onChange={onChange} autoComplete="organization" aria-invalid={Boolean(errors.company)} aria-describedby={errors.company ? 'company-error' : undefined} />
@@ -250,21 +207,6 @@ export function ContactPage() {
                     ))}
                   </select>
                 </Field>
-                <div className="field field--full">
-                  <span className="field__label">{t.contact.interests}</span>
-                  <div className="checks">
-                    {categories.map((category) => (
-                      <label key={category.id} className="check">
-                        <input
-                          type="checkbox"
-                          checked={form.interests.includes(category.id)}
-                          onChange={() => toggleInterest(category.id)}
-                        />
-                        <span>{t.categories[category.id].title}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
                 <Field id="message" label={t.contact.message} error={errors.message} required full>
                   <textarea
                     id="message"
@@ -293,7 +235,7 @@ export function ContactPage() {
               {errors.consent ? <p id="consent-error" className="field__error">{errors.consent}</p> : null}
               {status === 'error' ? <p className="field__error" role="alert">{t.contact.success.fail}</p> : null}
 
-              <button className="btn btn--primary" type="submit" disabled={status === 'sending'}>
+              <button className="btn btn--primary contact-form__submit" type="submit" disabled={status === 'sending'}>
                 {status === 'sending' ? t.contact.sending : t.contact.submit}
               </button>
             </form>

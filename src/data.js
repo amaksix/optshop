@@ -29,7 +29,7 @@ export const values = [
   { id: 'europe', icon: 'ShieldCheck' },
 ];
 
-export const steps = ['apply', 'offer', 'order', 'delivery'];
+export const steps = ['apply', 'risk', 'offer', 'order', 'delivery'];
 
 export const aboutPoints = [
   { id: 'experience', icon: 'Award' },
@@ -44,8 +44,6 @@ export const clients = [
 ];
 
 export const partnerPoints = ['prices', 'catalogue', 'delivery', 'manager'];
-
-export const topics = ['client', 'quote', 'general', 'career'];
 
 export const techBrands = [
   { name: 'Samsung', ...logo('siSamsung') },

@@ -47,9 +47,9 @@ export function Seo({ title, description }) {
     }
     canonical.href = canonicalHref;
     setMeta('og:url', canonicalHref, 'property');
-    setAlternate('lv', pageUrl(site.url, location.pathname, 'lv'));
     setAlternate('en', pageUrl(site.url, location.pathname, 'en'));
-    setAlternate('x-default', pageUrl(site.url, location.pathname, 'lv'));
+    setAlternate('lv', pageUrl(site.url, location.pathname, 'lv'));
+    setAlternate('x-default', pageUrl(site.url, location.pathname, 'en'));
   }, [title, description, lang, location.pathname]);
 
   return null;

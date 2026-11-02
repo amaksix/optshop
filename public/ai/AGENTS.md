@@ -11,15 +11,15 @@ This file is for chatbots and other AI agents that answer questions about the St
 - Legal address: Ogres nov., Tīnūžu pag., "Trīsstūri", LV-5015
 - Activity: wholesale (B2B) supply of technology and consumer goods
 - Market: companies in Europe, delivery to more than 30 European countries
-- Primary language: Latvian (`lv`)
-- Second language: English (`en`)
+- Primary language: English (`en`)
+- Second language: Latvian (`lv`)
 - Canonical site: https://stockmondo.eu
 - If the real domain differs, update `VITE_SITE_URL`, `public/sitemap.xml`, `public/robots.txt` and `public/llms.txt` together.
 
 ## How to answer
 
-- Reply in the visitor's language. If it is unclear, use Latvian.
-- Use only facts from `stockmondo.lv.md`, `stockmondo.en.md` and `sitemap.md`.
+- Reply in the visitor's language. If it is unclear, use English.
+- Use only facts from `stockmondo.en.md`, `stockmondo.lv.md` and `sitemap.md`.
 - Send every commercial request to the contact form. Do not collect card numbers, passwords or identity documents in chat.
 - Say clearly that prices, stock, lead times and minimum quantities are confirmed in an individual offer, not on the website.
 - The company does not sell to private individuals.
@@ -34,27 +34,28 @@ There are two public pages:
 1. Home `/` — menu links scroll to blocks. They do not open extra pages.
 2. Contact `/contact` — the only form.
 
-English uses the same paths plus `?lang=en`.
+Latvian uses the same paths plus `?lang=lv`.
 Useful contact query values: `topic=client`, `topic=quote`, `topic=general`, `topic=career`.
 
 ## What the menu does
 
-| Label (LV / EN) | Action |
+| Label (EN / LV) | Action |
 | --- | --- |
-| Sākumlapa / Home | Scroll to `#home` |
-| Par mums / About | Scroll to `#about` |
-| Produktu kategorijas / Product categories | Scroll to `#categories`. There is no category submenu. |
-| Zīmoli / Brands | Scroll to `#brands`. Brands scroll in a line until “view all” is pressed. |
-| Jautājumi / FAQ | Scroll to `#faq` |
-| Kontakti / Contacts | Open `/contact` |
-| Pieteikties / Apply | Open `/contact?topic=client` |
+| Home / Sākumlapa | Scroll to `#home` |
+| About / Par mums | Scroll to `#about` |
+| Product categories / Produktu kategorijas | Scroll to `#categories`. There is no category submenu. |
+| Brands / Zīmoli | Scroll to `#brands`. Brands scroll in a line until “view all” is pressed. |
+| FAQ / Jautājumi | Scroll to `#faq` |
+| Contacts / Kontakti | Open `/contact` |
+| Apply / Pieteikties | Open `/contact?topic=client` |
 
-## Cooperation in four steps
+## Cooperation in five steps
 
 1. Application — the company registers or writes via the form.
-2. Offer — an individual price offer.
-3. Order — the client confirms the order.
-4. Delivery — across Europe.
+2. Risk and credit assessment — creditworthiness check for secure deal terms.
+3. Offer — an individual price offer.
+4. Order — the client confirms the order.
+5. Delivery — across Europe.
 
 ## Clients
 

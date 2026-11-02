@@ -93,6 +93,8 @@ export const translations = {
       home: 'Skaistumkopšanas un mājsaimniecības zīmoli',
       seeAll: 'Skatīt visus zīmolus',
       showLine: 'Rādīt zīmolu lenti',
+      disclaimer:
+        'Visas preču zīmes un logotipi pieder to attiecīgajiem īpašniekiem. Zīmolu pieminēšana nenozīmē oficiālu izplatīšanu vai pilnvarojumu, ja vien tas nav skaidri norādīts.',
     },
     logistics: {
       eyebrow: 'Efektīva loģistika un plašs piegādātāju tīkls',
@@ -116,6 +118,10 @@ export const translations = {
       offer: { title: 'Piedāvājums', text: 'Saņemiet individuālu cenu piedāvājumu' },
       order: { title: 'Pasūtījums', text: 'Apstipriniet pasūtījumu ar ērtiem norēķiniem' },
       delivery: { title: 'Piegāde', text: 'Nodrošinām ātru un uzticamu piegādi visā Eiropā' },
+      risk: {
+        title: 'Riska un kredītspējas pārbaude',
+        text: 'Izvērtējam kredītspēju drošiem darījumu nosacījumiem',
+      },
     },
     about: {
       title: 'Par mums',
@@ -154,7 +160,7 @@ export const translations = {
         },
         {
           q: 'Kā pieprasīt cenu?',
-          a: 'Aizpildiet kontaktformu un norādiet interesējošās kategorijas. Sagatavosim individuālu cenu piedāvājumu.',
+          a: 'Aizpildiet kontaktformu un īsi aprakstiet vajadzīgo sortimentu. Sagatavosim individuālu cenu piedāvājumu.',
         },
       ],
     },
@@ -166,7 +172,7 @@ export const translations = {
       bannerTitle: 'Sīkdatnes un privātums',
       bannerText: 'Vietne saglabā valodas izvēli un jūsu atbildi uz šo paziņojumu. Reklāmas sīkdatnes netiek lietotas.',
       privacy: [
-        'StockMondo ir uzņēmumiem paredzēta vairumtirdzniecības vietne. Mēs apstrādājam tikai tos datus, ko pats norādāt kontaktformā: uzņēmuma nosaukumu, reģistrācijas numuru, kontaktpersonu, e-pastu, tālruni, valsti, izvēlētās kategorijas un ziņojumu.',
+        'StockMondo ir uzņēmumiem paredzēta vairumtirdzniecības vietne. Mēs apstrādājam tikai tos datus, ko pats norādāt kontaktformā: uzņēmuma nosaukumu, reģistrācijas numuru, kontaktpersonu, e-pastu, tālruni, valsti un ziņojumu.',
         'Šos datus izmantojam, lai atbildētu uz pieteikumu, sagatavotu piedāvājumu vai sazinātos par sadarbību. Datus nenododam reklāmas tīkliem un nepārdodam trešajām personām.',
         'Kamēr nav pieslēgta nosūtīšana uz e-pastu, pieteikums paliek tikai jūsu ierīcē. Valodas izvēle un atbilde par sīkdatnēm arī tiek glabāta šajā pārlūkā.',
         'Privātpersonu pasūtījumus nepieņemam. Cenas, atlikumi un piegādes termiņi tiek apstiprināti individuālā piedāvājumā.',
@@ -214,13 +220,6 @@ export const translations = {
     contact: {
       title: 'Kontakti',
       lead: 'Pastāstiet par savu uzņēmumu. Forma ir paredzēta B2B pieteikumiem, cenu pieprasījumiem un sadarbības jautājumiem.',
-      topic: 'Pieprasījuma veids',
-      topics: {
-        client: 'Kļūt par klientu',
-        quote: 'Pieprasīt piedāvājumu',
-        general: 'Vispārīgs jautājums',
-        career: 'Karjera',
-      },
       company: 'Uzņēmuma nosaukums',
       reg: 'Reģistrācijas numurs',
       regOptional: 'nav obligāts',
@@ -228,7 +227,6 @@ export const translations = {
       email: 'E-pasts',
       phone: 'Tālrunis',
       country: 'Valsts',
-      interests: 'Interesējošās kategorijas',
       message: 'Ziņojums',
       messagePlaceholder: 'Īsi aprakstiet sortimentu, aptuveno apjomu vai jautājumu.',
       consent: 'Piekrītu, ka šie dati tiek izmantoti, lai atbildētu uz manu pieteikumu.',
@@ -355,6 +353,8 @@ export const translations = {
       home: 'Beauty and household brands',
       seeAll: 'View all brands',
       showLine: 'Show the brand line',
+      disclaimer:
+        'All trademarks and logos belong to their respective owners. Mention of brands does not imply official distribution or authorization unless clearly stated.',
     },
     logistics: {
       eyebrow: 'Efficient logistics and a wide supplier network',
@@ -378,6 +378,10 @@ export const translations = {
       offer: { title: 'Offer', text: 'Receive an individual price offer' },
       order: { title: 'Order', text: 'Confirm the order with convenient payment' },
       delivery: { title: 'Delivery', text: 'Fast and reliable delivery across Europe' },
+      risk: {
+        title: 'Risk and credit assessment',
+        text: 'We assess creditworthiness for secure deal terms',
+      },
     },
     about: {
       title: 'About us',
@@ -416,7 +420,7 @@ export const translations = {
         },
         {
           q: 'How do I request a price?',
-          a: 'Fill in the contact form and mark the categories you need. We will prepare an individual price offer.',
+          a: 'Fill in the contact form and briefly describe the assortment you need. We will prepare an individual price offer.',
         },
       ],
     },
@@ -428,7 +432,7 @@ export const translations = {
       bannerTitle: 'Cookies and privacy',
       bannerText: 'This site stores your language choice and your answer to this notice. Advertising cookies are not used.',
       privacy: [
-        'StockMondo is a wholesale website for companies. We process only the details you enter in the contact form: company name, registration number, contact person, email, phone, country, chosen categories and your message.',
+        'StockMondo is a wholesale website for companies. We process only the details you enter in the contact form: company name, registration number, contact person, email, phone, country and your message.',
         'We use these details to reply to an application, prepare an offer or discuss cooperation. We do not pass them to advertising networks and we do not sell them.',
         'Until email delivery is connected, the application stays on your device. Your language choice and this cookie answer are also stored in this browser.',
         'We do not take orders from private individuals. Prices, stock and delivery times are confirmed in an individual offer.',
@@ -476,13 +480,6 @@ export const translations = {
     contact: {
       title: 'Contact',
       lead: 'Tell us about your company. This form is for B2B applications, quote requests and partnership questions.',
-      topic: 'Request type',
-      topics: {
-        client: 'Become a client',
-        quote: 'Request a quote',
-        general: 'General question',
-        career: 'Careers',
-      },
       company: 'Company name',
       reg: 'Registration number',
       regOptional: 'optional',
@@ -490,7 +487,6 @@ export const translations = {
       email: 'Email',
       phone: 'Phone',
       country: 'Country',
-      interests: 'Categories of interest',
       message: 'Message',
       messagePlaceholder: 'Briefly describe the assortment, approximate volume or your question.',
       consent: 'I agree that these details may be used to reply to my request.',

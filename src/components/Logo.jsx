@@ -2,16 +2,25 @@ import { Link } from 'react-router-dom';
 import { sectionHref } from '../lib/nav';
 import { useI18n } from '../context/Language';
 
-export function Logo() {
-  const { lang, t } = useI18n();
+const LOGO_SRC = {
+  color: '/images/StockMondo_blue_svg.svg',
+  white: '/images/StockMondo_white_svg.svg',
+};
+
+export function Logo({ variant = 'color' }) {
+  const { lang } = useI18n();
+  const src = LOGO_SRC[variant] ?? LOGO_SRC.color;
 
   return (
     <Link to={sectionHref(lang, 'home')} className="logo" aria-label="StockMondo">
-      <span className="logo__name">
-        <span className="logo__stock">STOCK</span>
-        <span className="logo__mondo">MONDO</span>
-      </span>
-      <span className="logo__tag">{t.nav.tagline}</span>
+      <img
+        className="logo__img"
+        src={src}
+        alt="StockMondo"
+        width={210}
+        height={64}
+        decoding="async"
+      />
     </Link>
   );
 }

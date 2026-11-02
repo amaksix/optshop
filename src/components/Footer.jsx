@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone } from 'lucide-react';
+import { ChevronDown, Mail, Phone } from 'lucide-react';
 import { company, contactPerson } from '../config';
 import { useI18n } from '../context/Language';
 import { useLegal } from '../context/Legal';
@@ -15,9 +16,56 @@ function Fact({ label, value }) {
   );
 }
 
+function useIsMobile(query = '(max-width: 700px)') {
+  const [matches, setMatches] = useState(() =>
+    typeof window !== 'undefined' ? window.matchMedia(query).matches : false
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia(query);
+    const onChange = () => setMatches(mq.matches);
+    onChange();
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, [query]);
+
+  return matches;
+}
+
+function FooterGroup({ title, isMobile, children }) {
+  const [open, setOpen] = useState(false);
+  const expanded = !isMobile || open;
+
+  return (
+    <div className={`footer__group${isMobile ? ' footer__group--fold' : ''}`}>
+      {isMobile ? (
+        <button
+          type="button"
+          className="footer__fold-btn"
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span>{title}</span>
+          <ChevronDown
+            className={`footer__fold-icon${open ? ' is-open' : ''}`}
+            size={18}
+            aria-hidden="true"
+          />
+        </button>
+      ) : (
+        <h2>{title}</h2>
+      )}
+      <div className="footer__group-body" hidden={!expanded}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export function Footer() {
   const { lang, t } = useI18n();
   const { setOpen } = useLegal();
+  const isMobile = useIsMobile();
   const year = new Date().getFullYear();
   const phoneHref = `tel:${contactPerson.phone.replace(/\s+/g, '')}`;
 
@@ -25,7 +73,7 @@ export function Footer() {
     <footer className="footer">
       <div className="wrap footer__grid">
         <div className="footer__brand">
-          <Logo />
+          <Logo variant="white" />
           <div className="footer-contact">
             <p className="footer-contact__title">{t.footer.contactUs}</p>
             <p className="footer-contact__name">{contactPerson.name}</p>
@@ -41,8 +89,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
-          <h2>{t.footer.site}</h2>
+        <FooterGroup title={t.footer.site} isMobile={isMobile}>
           <ul>
             <li><Link to={sectionHref(lang, 'home')}>{t.nav.home}</Link></li>
             <li><Link to={sectionHref(lang, 'categories')}>{t.nav.categories}</Link></li>
@@ -51,10 +98,9 @@ export function Footer() {
             <li><Link to={sectionHref(lang, 'faq')}>{t.nav.faq}</Link></li>
             <li><Link to={contactHref(lang)}>{t.nav.contact}</Link></li>
           </ul>
-        </div>
+        </FooterGroup>
 
-        <div>
-          <h2>{t.footer.documents}</h2>
+        <FooterGroup title={t.footer.documents} isMobile={isMobile}>
           <ul>
             <li>
               <button type="button" onClick={() => setOpen('privacy')}>{t.footer.privacy}</button>
@@ -63,17 +109,16 @@ export function Footer() {
               <button type="button" onClick={() => setOpen('cookies')}>{t.footer.cookies}</button>
             </li>
           </ul>
-        </div>
+        </FooterGroup>
 
-        <div>
-          <h2>{t.footer.company}</h2>
+        <FooterGroup title={t.footer.company} isMobile={isMobile}>
           <dl className="company-facts">
             <Fact label={t.footer.legalName} value={company.legalName} />
             <Fact label={t.footer.reg} value={company.registrationNumber} />
             <Fact label={t.footer.vat} value={company.vatNumber} />
             <Fact label={t.footer.address} value={company.address} />
           </dl>
-        </div>
+        </FooterGroup>
       </div>
       <div className="wrap footer__bottom">
         <p className="footer__copy">© {year} StockMondo. {t.footer.rights}</p>

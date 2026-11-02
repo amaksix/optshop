@@ -1,13 +1,13 @@
 # StockMondo sitemap for agents
 
-Latvian is the default. Add `?lang=en` for English. Anchors are on the home page.
+English is the default. Add `?lang=lv` for Latvian. Anchors are on the home page.
 
 ## URLs
 
 - https://stockmondo.eu/
-- https://stockmondo.eu/?lang=en
+- https://stockmondo.eu/?lang=lv
 - https://stockmondo.eu/contact
-- https://stockmondo.eu/contact?lang=en
+- https://stockmondo.eu/contact?lang=lv
 - https://stockmondo.eu/contact?topic=client
 - https://stockmondo.eu/contact?topic=quote
 - https://stockmondo.eu/contact?topic=general
@@ -22,7 +22,7 @@ Latvian is the default. Add `?lang=en` for English. Anchors are on the home page
 
 ## Home sections
 
-- `#home` — hero: who StockMondo is, and the two actions "become a client" (scrolls to `#partner`) and "request a quote" (opens the contact form).
+- `#home` — hero: who StockMondo is, and the "become a client" action (opens `/contact?topic=client`).
 - `#values` — five cooperation points: assortment, delivery, flexible terms, individual B2B solutions, Europe.
 - `#categories` — eight product categories.
 - `#cat-phones` — mobile phones and smart devices.
@@ -34,8 +34,8 @@ Latvian is the default. Add `?lang=en` for English. Anchors are on the home page
 - `#cat-smarthome` — smart home devices.
 - `#cat-accessories` — accessories and other goods.
 - `#brands` — brand grid with technology and household tabs.
-- `#partner` — European delivery and the "become a client" card. Register opens the contact form.
-- `#process` — application, offer, order, delivery.
+- `#partner` — European delivery and the "become a client" checklist with register CTA. Register opens the contact form.
+- `#process` — application, risk and credit assessment, offer, order, delivery.
 - `#about` — company story: B2B trading, 20 years of experience, flexible solutions and trust.
 - `#clients` — types of client companies.
 - `#faq` — four questions.

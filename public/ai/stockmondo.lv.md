@@ -2,7 +2,7 @@
 
 StockMondo ir vairumtirdzniecības partneris uzņēmumiem Eiropā. Uzņēmums piegādā tehnoloģiju un patēriņa preces: elektroniku, IT, mājsaimniecības un skaistumkopšanas sortimentu no vadošajiem zīmoliem.
 
-Vietnes pamatvaloda ir latviešu. Angļu valoda ir tajās pašās lapās ar adresi `?lang=en`.
+Vietnes pamatvaloda ir angļu. Latviešu valoda ir tajās pašās lapās ar adresi `?lang=lv`.
 
 ## Ko vietne dara
 
@@ -46,9 +46,10 @@ Skaistumkopšanas un mājsaimniecības zīmoli: Bosch, Siemens, Panasonic, Sharp
 ## Kā notiek sadarbība
 
 1. Pieteikums — reģistrējas vai sazinās ar komandu caur formu.
-2. Piedāvājums — individuāla cena.
-3. Pasūtījums — apstiprinājums ar ērtiem norēķiniem.
-4. Piegāde — ātra un uzticama piegāde Eiropā.
+2. Riska un kredītspējas pārbaude — kredītspējas izvērtēšana drošiem darījumu nosacījumiem.
+3. Piedāvājums — individuāla cena.
+4. Pasūtījums — apstiprinājums ar ērtiem norēķiniem.
+5. Piegāde — ātra un uzticama piegāde Eiropā.
 
 ## Par mums
 

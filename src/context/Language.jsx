@@ -5,7 +5,7 @@ import { translations } from '../i18n';
 const LanguageContext = createContext(null);
 
 function readLang() {
-  return new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'lv';
+  return new URLSearchParams(window.location.search).get('lang') === 'lv' ? 'lv' : 'en';
 }
 
 export function LanguageProvider({ children }) {
@@ -13,7 +13,7 @@ export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState(readLang);
 
   useEffect(() => {
-    const next = params.get('lang') === 'en' ? 'en' : 'lv';
+    const next = params.get('lang') === 'lv' ? 'lv' : 'en';
     if (next !== lang) setLangState(next);
   }, [params, lang]);
 
@@ -24,7 +24,7 @@ export function LanguageProvider({ children }) {
   const setLang = (next) => {
     setLangState(next);
     const updated = new URLSearchParams(params);
-    if (next === 'en') updated.set('lang', 'en');
+    if (next === 'lv') updated.set('lang', 'lv');
     else updated.delete('lang');
     setParams(updated, { replace: true });
   };

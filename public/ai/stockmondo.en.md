@@ -2,7 +2,7 @@
 
 StockMondo is a wholesale partner for companies in Europe. It supplies technology and consumer goods: electronics, IT, household products and beauty products from leading brands.
 
-The primary language of the website is Latvian. English is the same pages with `?lang=en`.
+The primary language of the website is English. Latvian is the same pages with `?lang=lv`.
 
 ## What the website does
 
@@ -46,9 +46,10 @@ This is the assortment direction. It is not a promise that every product is in s
 ## How cooperation works
 
 1. Application — the company registers or writes through the form.
-2. Offer — an individual price.
-3. Order — confirmation with convenient payment.
-4. Delivery — fast and reliable delivery in Europe.
+2. Risk and credit assessment — creditworthiness check for secure deal terms.
+3. Offer — an individual price.
+4. Order — confirmation with convenient payment.
+5. Delivery — fast and reliable delivery in Europe.
 
 ## About us
 
