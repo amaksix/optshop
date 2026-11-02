@@ -1039,15 +1039,29 @@ a { color: inherit; }
 .footer__fold-icon {
   flex-shrink: 0;
   opacity: 0.75;
-  transition: transform 0.2s ease;
+  transition: transform 0.35s ease;
 }
 
 .footer__fold-icon.is-open {
   transform: rotate(180deg);
 }
 
-.footer__group-body[hidden] {
-  display: none;
+.footer__group-panel {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.footer__group--fold .footer__group-panel {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.footer__group--fold.is-open .footer__group-panel {
+  grid-template-rows: 1fr;
+}
+
+.footer__group-body {
+  overflow: hidden;
 }
 
 .footer li + li { margin-top: 8px; }
@@ -1384,7 +1398,7 @@ body.dialog-open { overflow: hidden; }
   .values__grid { grid-template-columns: 1fr 1fr; }
   .form-grid, .search-panel__cols { grid-template-columns: 1fr; }
   .category-grid, .legal__grid, .steps, .footer__grid { grid-template-columns: 1fr; }
-  .step:nth-child(odd) { border-right: 0; }
+  .step:nth-child(odd):not(:last-child) { border-right: 0; }
   .step:nth-child(-n+2) { border-bottom: 0; }
   .step:not(:last-child) { border-bottom: 1px solid var(--line); }
   .brand-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1416,7 +1430,9 @@ body.dialog-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .category-card:hover { transform: none; }
-  .footer__fold-icon { transition: none; }
+  .footer__fold-icon,
+  .footer__group--fold .footer__group-panel,
+  .faq__panel { transition: none; }
   .text-link svg,
   .btn > svg:last-child { transition: none; }
   .text-link:hover svg,

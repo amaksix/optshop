@@ -37,7 +37,9 @@ function FooterGroup({ title, isMobile, children }) {
   const expanded = !isMobile || open;
 
   return (
-    <div className={`footer__group${isMobile ? ' footer__group--fold' : ''}`}>
+    <div
+      className={`footer__group${isMobile ? ' footer__group--fold' : ''}${expanded ? ' is-open' : ''}`}
+    >
       {isMobile ? (
         <button
           type="button"
@@ -55,8 +57,10 @@ function FooterGroup({ title, isMobile, children }) {
       ) : (
         <h2>{title}</h2>
       )}
-      <div className="footer__group-body" hidden={!expanded}>
-        {children}
+      <div className="footer__group-panel" aria-hidden={!expanded}>
+        <div className="footer__group-body">
+          {children}
+        </div>
       </div>
     </div>
   );

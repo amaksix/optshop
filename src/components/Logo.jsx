@@ -3,8 +3,8 @@ import { sectionHref } from '../lib/nav';
 import { useI18n } from '../context/Language';
 
 const LOGO_SRC = {
-  color: '/images/StockMondo_blue_svg.svg',
-  white: '/images/StockMondo_white_svg.svg',
+  color: `${import.meta.env.BASE_URL}images/StockMondo_blue_svg.svg`,
+  white: `${import.meta.env.BASE_URL}images/StockMondo_white_svg.svg`,
 };
 
 export function Logo({ variant = 'color' }) {
